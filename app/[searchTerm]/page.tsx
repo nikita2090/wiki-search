@@ -1,5 +1,6 @@
 import React from 'react';
-import { Result, SearchResult, getWikiResults } from '../api/getWikiResults';
+import { Result, SearchResult, getWikiResults } from '../../api/getWikiResults';
+import ResultItem from '@/components/ResultItem';
 
 type Props = {
     params: {
@@ -32,5 +33,11 @@ export default async function SearchResult({ params: { searchTerm } }: Props) {
     if (!result) {
         return <h2>No results</h2>;
     }
-    return <div>{JSON.stringify(result)}</div>;
+    return (
+        <div>
+            {Object.values(result).map((item) => (
+                <ResultItem data={item} key={item.pageid} />
+            ))}
+        </div>
+    );
 }

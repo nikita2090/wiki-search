@@ -15,6 +15,8 @@ export interface SearchResult {
     };
 }
 
+export const API_ADDRESS = 'https://en.wikipedia.org';
+
 export const getWikiResults = async (searchTerm: string) => {
     const searchParams = new URLSearchParams({
         action: 'query',
@@ -29,9 +31,7 @@ export const getWikiResults = async (searchTerm: string) => {
         format: 'json',
         origin: '*',
     });
-    const response = await fetch(
-        `https://en.wikipedia.org/w/api.php?${searchParams}`
-    );
+    const response = await fetch(`${API_ADDRESS}/w/api.php?${searchParams}`);
 
     return response.json();
 };
