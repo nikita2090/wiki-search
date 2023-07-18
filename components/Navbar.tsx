@@ -4,8 +4,8 @@ import Search from './Search';
 
 export default function Navbar() {
     return (
-        <nav className="flex justify-between p-5 bg-gray-700 fixed w-full">
-            <h1 className="text-3xl font-bold text-white">
+        <nav className="flex flex-col items-center md:flex-row md:justify-between p-5 bg-gray-700 fixed w-full">
+            <h1 className="text-3xl pb-2.5 font-bold text-white md:pb-0">
                 <Link href={'/'}>WikiSearch</Link>
             </h1>
             <Search />

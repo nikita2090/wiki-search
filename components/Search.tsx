@@ -19,11 +19,15 @@ export default function Search() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="w-50 flex justify-between">
+        <form
+            onSubmit={handleSubmit}
+            className=" flex justify-center md:w-1/3 md:justify-end "
+        >
             <input
                 value={search}
                 onChange={handleSearchChange}
-                className="bg-white p-2 w-80 text-lg rounded-md"
+                className="bg-white p-2 text-lg rounded-md focus:outline-0 md:flex-grow"
+                placeholder="Search"
             />
             <button className="p-2 text-xl rounded-xl bg-slate-300 ml-2 font-bold hover:bg-blue-200">
                 🚀
